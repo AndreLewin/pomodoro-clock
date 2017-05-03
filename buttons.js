@@ -6,12 +6,15 @@ if (window.localStorage) {
     var defaultPomodoroTime = 10;
     localStorage.pomodoroTime = (localStorage.pomodoroTime || defaultPomodoroTime);
 
-    // Initialize timer or get previous value
+    var defaultTomatoes = 0;
+    localStorage.tomatoes = (localStorage.tomatoes || defaultTomatoes);
+
     localStorage.timer = (localStorage.timer || localStorage.pomodoroTime);
 
     // Variable declaration
-    var chronoDiv = document.getElementById("chrono");
     var pomodoroTimeDiv = document.getElementById("pomodoro-time");
+    var tomatoesDiv = document.getElementById("tomato-number");
+    var chronoDiv = document.getElementById("chrono");
     var playStopButton = document.getElementById("button-stop");
     var i = undefined;
 
@@ -22,6 +25,11 @@ if (window.localStorage) {
         var seconds = localStorage.pomodoroTime - minutes*60;
         var display = (minutes >= 10 ? minutes : '0' + minutes) + ':' + (seconds >= 10 ? seconds : '0' + seconds);
         pomodoroTimeDiv.innerHTML = display;
+    }
+
+    // Display number of tomatoes
+    function displayNumberTomatoes() {
+        tomatoesDiv.innerHTML = localStorage.tomatoes;
     }
 
     // Display time
@@ -43,7 +51,8 @@ if (window.localStorage) {
             displayTime();
 
             if (localStorage.timer <= 0) {
-                // Add a tomato
+                localStorage.tomatoes = parseInt(localStorage.tomatoes) + 1;
+                displayNumberTomatoes();
                 reset()
             }
         }, 1000);
@@ -113,5 +122,5 @@ if (window.localStorage) {
 
 } else {
     // Error message
-    document.getElementsByTagName("header")[0].innerHTML += "<h3 style=\"color:red\">Sorry, your browser doesn't suppot LocalStorage</h3>";
+    document.getElementsByTagName("header")[0].innerHTML += "<h3 style=\"color:red\">Sorry, your browser doesn't support LocalStorage</h3>";
 }

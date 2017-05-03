@@ -1,33 +1,41 @@
-.tomatoes {
-	display: flex;
-	justify-content: center;
+.tomato {
+	display: inline-block;
+    position: relative;
+    top: 20px;
+    padding: 0px 0px 30px 0px;
+}
+
+#tomato-number {
+    color: #fff;
+    font-size: 3em;
+    position: inherit;
+    top: -20px;
 }
 
 .tomato-branch {
-    margin: 50px 0;
-    position: relative;
+    position: absolute;
     display: block;
     color: green;
     width: 0px;
     height: 0px;
-    border-right: 100px solid transparent;
-    border-bottom: 70px solid green;
-    border-left: 100px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 35px solid green;
+    border-left: 50px solid transparent;
     transform: rotate(35deg);
 }
 
 .tomato-branch:before {
-    border-bottom: 80px solid green;
-    border-left: 30px solid transparent;
-    border-right: 30px solid transparent;
+    border-bottom: 40px solid green;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
     position: absolute;
     height: 0px;
     width: 0px;
-    top: -45px;
-    left: -65px;
+    top: -22.5px;
+    left: -32.5px;
     display: block;
-    content: '';
     transform: rotate(-35deg);
+    content: '';
 }
 
 .tomato-branch:after {
@@ -35,12 +43,12 @@
     display: block;
     color: green;
     top: 3px;
-    left: -105px;
+    left: -52.5px;
     width: 0px;
     height: 0px;
-    border-right: 100px solid transparent;
-    border-bottom: 70px solid green;
-    border-left: 100px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 35px solid green;
+    border-left: 50px solid transparent;
     transform: rotate(-70deg);
     content: '';
 }
@@ -51,7 +59,6 @@
 	width:100px;
 	border-radius:50px 50px 0px 0px;
 	position:relative;
-	transition: all .3s ease-in-out;
 }
 
 .tomato-bottom {
@@ -60,22 +67,5 @@
 	width:100px;
 	border-radius:0 0 50px 50px;
 	position:relative;
-	transition: all .3s ease-in-out;
+    border-bottom: 8px solid #BD3E31;
 }
-
-
-
-/*
-#tomatoTop {
-	background: #A8B848;
-	height:16px;
-	width:16px;
-	border-radius:16px 0 16px 0;
-	position:absolute;
-	transform: rotateZ(135deg);
-	top:-16px;
-	z-index:1;
-	left: 32px +18px / 2;
-	transition: all .2s ease-in-out;
-}
-*/
