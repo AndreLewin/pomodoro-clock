@@ -1,9 +1,9 @@
 // Built on http://codepen.io/alejandroperezmartin/pen/GhAJy
-
+// The chrono was changed to a countdown with many other features (default time, number of tomatoes ...)
 if (window.localStorage) {
 
     // Initialize the pomodoro time or get previous value
-    var defaultPomodoroTime = 10;
+    var defaultPomodoroTime = 25*60;
     localStorage.pomodoroTime = (localStorage.pomodoroTime || defaultPomodoroTime);
 
     var defaultTomatoes = 0;
